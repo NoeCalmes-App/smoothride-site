@@ -1,3 +1,19 @@
+# Publication du site sur GitHub Pages, à chaque push sur `main`.
+#
+# ⚠️ IL FAUT ACTIVER PAGES UNE FOIS, À LA MAIN, sur un dépôt neuf :
+# Settings → Pages → Source : « GitHub Actions ». Sans ça le job échoue avec
+# « Get Pages site failed » / HttpError: Not Found — ce n'est pas le code qui
+# est cassé, c'est que le dépôt n'a pas encore de site Pages à déployer.
+# (L'option `enablement` de `configure-pages` sait le faire toute seule, mais
+# elle exige un jeton personnel en secret du dépôt : plus de mise en place que
+# la case à cocher qu'elle remplace.)
+#
+# PAS DE `configure-pages` ICI, volontairement. Cette étape ne sert qu'à
+# calculer un chemin de base pour les sites servis sous /nom-du-depot/ ; le
+# site vit à la racine de son domaine. C'était pourtant elle qui faisait
+# échouer le job. Les deux autres dépôts (landing-page, nowork) déploient sans
+# elle depuis toujours.
+
 name: Deploy to GitHub Pages
 
 on:
@@ -19,10 +35,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
 
       - name: Setup Node
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v7
         with:
           node-version: '22'
           cache: 'npm'
@@ -33,11 +49,8 @@ jobs:
       - name: Build
         run: npm run build
 
-      - name: Setup Pages
-        uses: actions/configure-pages@v4
-
       - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
+        uses: actions/upload-pages-artifact@v5
         with:
           path: './dist'
 
@@ -50,4 +63,4 @@ jobs:
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v4
+        uses: actions/deploy-pages@v5

@@ -1,108 +1,130 @@
 import { Link } from 'react-router-dom'
-import { LegalLayout, Section, Liste, ACompleter } from '../components/LegalLayout'
-import { app, contact, editeur, SITE_URL } from '../config/site'
+import { LegalLayout, Section, Liste } from '../components/LegalLayout'
+import { app, contact, editeur, hebergeur, SITE_URL } from '../config/site'
 
 /**
- * La politique de confidentialité de L'APPLICATION (le site, lui, ne collecte
- * rien). Elle décrit ce que l'app fait réellement d'après le cahier des
- * charges et la maquette : la position pendant l'utilisation, un compte, les
- * signalements, un abonnement par les stores, un historique qui reste sur le
- * téléphone. Ce que le cahier des charges ne fixe pas encore est marqué
- * « À compléter », visiblement — rien n'est inventé.
+ * LA POLITIQUE DE CONFIDENTIALITÉ DU SITE — et de lui seul.
+ *
+ * ⚠️ ELLE NE PARLE PAS DE L'APPLICATION, ET C'EST LA CORRECTION DU 3 SEPTEMBRE
+ * 2026. La première version décrivait ce que l'app collecterait : la position,
+ * les comptes, les signalements, les durées de conservation, les sous-traitants
+ * — pour une application qui n'est PAS PUBLIÉE. Trois passages finissaient en
+ * « À compléter » parce que la réponse n'existait pas encore.
+ *
+ * Une politique qui décrit des traitements inexistants est fausse, et une page
+ * légale fausse dessert exactement ce pour quoi ce site existe : se faire
+ * accepter par Apple comme site officiel de l'entreprise. Apple lit ces pages.
+ *
+ * Ce site est statique : pas de compte, pas de formulaire, pas de cookie, pas
+ * de mesure d'audience. Deux traitements existent vraiment — les e-mails qu'on
+ * nous écrit, et les journaux techniques de l'hébergeur. On décrit ces deux-là,
+ * complètement, et rien d'autre. La politique de l'application sera publiée
+ * quand l'application le sera.
  */
 export default function Confidentialite() {
   const domaine = SITE_URL.replace(/^https?:\/\//, '')
   return (
     <LegalLayout
       titre="Politique de confidentialité"
-      description={`Comment l'application ${app.nom} collecte, utilise et protège vos données personnelles.`}
+      description={`Ce que le site ${domaine} fait de vos données : rien. Site statique, sans compte, sans cookie et sans mesure d'audience.`}
       miseAJour={editeur.miseAJourLegale}
       intro={
         <p>
-          Cette politique explique quelles données l'application mobile {app.nom} (« l'Application ») collecte, pourquoi, combien de temps elle les garde et quels sont vos droits. Elle s'applique à l'Application ; le site {domaine} est statique et ne collecte aucune donnée.
+          Cette politique concerne le site <strong>{domaine}</strong>. Ce site est une vitrine :
+          il présente l'application {app.nom}, sans compte, sans formulaire et sans achat.
+          Il ne collecte aucune donnée personnelle. L'application {app.nom} n'est pas encore
+          publiée ; lorsqu'elle le sera, sa propre politique de confidentialité sera publiée ici.
         </p>
       }
     >
       <Section titre="1. Responsable du traitement">
         <p>
-          Le responsable du traitement est <strong>{editeur.nomLegal}</strong>, {editeur.formeJuridique.toLowerCase()} (nom commercial {editeur.nomCommercial}), SIREN {editeur.siren}, {editeur.adresse}. Contact : <a href={`mailto:${contact.email}`}>{contact.email}</a>.
+          <strong>{editeur.nomLegal}</strong>, {editeur.formeJuridique.toLowerCase()} (nom commercial {editeur.nomCommercial}),
+          SIREN {editeur.siren}, {editeur.adresse}. Contact : <a href={`mailto:${contact.email}`}>{contact.email}</a>.
         </p>
       </Section>
 
-      <Section titre="2. Données collectées">
-        <p>L'Application ne collecte que ce dont elle a besoin pour fonctionner :</p>
+      <Section titre="2. Ce que le site ne fait pas">
         <Liste
           items={[
-            <><strong>Votre position</strong>, pendant que vous utilisez l'Application : pour afficher les dos-d'âne autour de vous, calculer et comparer vos trajets, et vous guider en roulant. Sans elle, l'Application reste consultable mais ne peut ni calculer un trajet ni vous guider. La position n'est pas collectée en arrière-plan lorsque l'Application est fermée.</>,
-            <><strong>Votre compte</strong> : une adresse e-mail, ou l'identifiant fourni par la connexion avec Apple ou Google, et un mot de passe chiffré le cas échéant. Le compte n'est demandé qu'au moment où il devient utile (abonnement).</>,
-            <><strong>Vos signalements</strong> de dos-d'âne : la position signalée et l'heure du signalement, associées à votre compte le temps de leur vérification. Un signalement n'est publié qu'après confirmation par d'autres conducteurs.</>,
-            <><strong>Votre abonnement</strong> : son état (actif, expiré) et sa date de renouvellement. Le paiement est traité par l'App Store ou Google Play ; l'Application ne voit ni ne conserve aucune donnée bancaire.</>,
-            <><strong>Votre historique de trajets</strong> (dates, distances, dos-d'âne évités) : il est stocké sur votre téléphone uniquement. Il n'est ni envoyé, ni partagé.</>,
-            <><strong>Des données techniques</strong> nécessaires au fonctionnement et à la correction des erreurs : modèle d'appareil, version du système et de l'Application. <ACompleter>préciser si un outil de rapport de plantage ou de mesure d'usage est intégré, et lequel.</ACompleter></>,
-          ]}
-        />
-      </Section>
-
-      <Section titre="3. Pourquoi ces données sont traitées">
-        <Liste
-          items={[
-            <>Fournir le service : carte, calcul et comparaison des trajets, navigation, signalements (exécution du contrat).</>,
-            <>Gérer votre compte et votre abonnement (exécution du contrat).</>,
-            <>Améliorer la base des dos-d'âne grâce aux signalements confirmés (intérêt légitime : la fiabilité du service pour tous les utilisateurs).</>,
-            <>Assurer la sécurité et le bon fonctionnement de l'Application (intérêt légitime).</>,
-          ]}
-        />
-        <p>Aucune donnée n'est utilisée à des fins publicitaires, et aucune n'est vendue.</p>
-      </Section>
-
-      <Section titre="4. Durée de conservation">
-        <Liste
-          items={[
-            <>La position n'est pas conservée au-delà du calcul du trajet en cours, sauf lorsqu'elle fait partie d'un signalement.</>,
-            <>Les données du compte sont conservées tant que le compte existe, puis supprimées dans les 30 jours suivant sa suppression, sauf obligation légale de conservation plus longue (par exemple les justificatifs d'abonnement).</>,
-            <>Les signalements confirmés sont conservés de façon anonyme, sans lien avec votre compte, tant qu'ils décrivent un dos-d'âne existant.</>,
-            <><ACompleter>durée de conservation des données techniques, selon l'outil retenu.</ACompleter></>,
-          ]}
-        />
-      </Section>
-
-      <Section titre="5. Qui a accès à vos données">
-        <p>Vos données ne sont partagées qu'avec les prestataires strictement nécessaires au service :</p>
-        <Liste
-          items={[
-            <><strong>Mapbox</strong> (fonds de carte et calcul d'itinéraires) : reçoit les positions nécessaires au calcul d'un trajet. Les données cartographiques proviennent d'OpenStreetMap.</>,
-            <><strong>Apple</strong> et <strong>Google</strong> : connexion avec un compte Apple ou Google si vous la choisissez, et gestion des abonnements par l'App Store et Google Play.</>,
-            <><ACompleter>l'hébergeur des comptes et des signalements (nom, pays d'hébergement des données).</ACompleter></>,
+            <>Il ne dépose <strong>aucun cookie</strong>, ni traceur d'aucune sorte.</>,
+            <>Il n'utilise <strong>aucun outil de mesure d'audience</strong> ni de publicité.</>,
+            <>Il ne propose <strong>ni compte, ni formulaire, ni paiement</strong> : rien n'y est saisi.</>,
+            <>Il ne pratique <strong>aucun profilage</strong> et ne prend aucune décision automatisée.</>,
           ]}
         />
         <p>
-          Ces prestataires agissent selon nos instructions et leurs propres politiques de confidentialité. Certains peuvent traiter des données hors de l'Union européenne ; dans ce cas, ils s'appuient sur des garanties reconnues par le RGPD (clauses contractuelles types ou décision d'adéquation).
+          Aucune donnée n'est vendue, louée ni transmise à des fins commerciales — il n'y en a pas à transmettre.
+        </p>
+      </Section>
+
+      <Section titre="3. Les deux seules données traitées">
+        <Liste
+          items={[
+            <>
+              <strong>Les e-mails que vous nous envoyez.</strong> Si vous écrivez à{' '}
+              <a href={`mailto:${contact.email}`}>{contact.email}</a>, nous traitons votre adresse et le contenu
+              de votre message, dans le seul but d'y répondre (intérêt légitime : répondre à une demande qui
+              nous est adressée). Écrire est libre : rien ne vous y oblige.
+            </>,
+            <>
+              <strong>Les journaux techniques de l'hébergeur.</strong> Comme tout site, celui-ci est servi par un
+              hébergeur — {hebergeur.nom} ({hebergeur.service}) — qui enregistre techniquement les requêtes reçues
+              (adresse IP, date, page demandée, navigateur) pour assurer la sécurité et le fonctionnement du service.
+              Ces journaux sont produits et conservés par l'hébergeur, selon sa propre politique de confidentialité ;
+              l'éditeur n'y accède pas et n'en tire aucune statistique.
+            </>,
+          ]}
+        />
+      </Section>
+
+      <Section titre="4. Combien de temps">
+        <p>
+          Les e-mails sont conservés le temps de traiter votre demande, puis au plus douze mois après le
+          dernier échange, avant d'être supprimés. Les journaux de l'hébergeur suivent la durée de conservation
+          fixée par l'hébergeur.
+        </p>
+      </Section>
+
+      <Section titre="5. Qui les reçoit">
+        <p>
+          Personne d'autre que l'éditeur. Aucun destinataire commercial, aucun partenaire publicitaire.
+          Interviennent seulement, et pour la seule technique : l'hébergeur du site ({hebergeur.nom}) et le
+          fournisseur de la messagerie qui achemine les e-mails.
+        </p>
+        <p>
+          {hebergeur.nom} est établie aux États-Unis : l'acheminement des pages implique donc un transfert
+          hors de l'Union européenne, encadré par les garanties prévues par le RGPD.
         </p>
       </Section>
 
       <Section titre="6. Vos droits">
         <p>
-          Conformément au Règlement général sur la protection des données (RGPD) et à la loi Informatique et Libertés, vous disposez d'un droit d'accès, de rectification, d'effacement, de limitation, d'opposition et de portabilité de vos données, ainsi que du droit de définir des directives sur leur sort après votre décès.
+          Vous disposez d'un droit d'accès, de rectification, d'effacement, de limitation, d'opposition et de
+          portabilité sur les données qui vous concernent, ainsi que du droit de définir des directives sur leur
+          sort après votre décès (RGPD et loi Informatique et Libertés). En pratique, cela ne peut porter que sur
+          un e-mail que vous nous auriez envoyé.
         </p>
         <p>
-          Pour l'exercer, écrivez à <a href={`mailto:${contact.email}`}>{contact.email}</a>. Nous répondons dans un délai d'un mois. Vous pouvez aussi supprimer votre compte vous-même : la procédure est décrite sur la page{' '}
-          <Link to="/supprimer-compte">Supprimer mon compte</Link>. Si vous estimez que vos droits ne sont pas respectés, vous pouvez saisir la CNIL (<a href="https://www.cnil.fr" target="_blank" rel="noopener noreferrer">cnil.fr</a>).
+          Pour l'exercer : <a href={`mailto:${contact.email}`}>{contact.email}</a>. Nous répondons dans un délai
+          d'un mois. Si vous estimez que vos droits ne sont pas respectés, vous pouvez saisir la CNIL
+          (<a href="https://www.cnil.fr" target="_blank" rel="noopener noreferrer">cnil.fr</a>).
         </p>
       </Section>
 
       <Section titre="7. Sécurité">
         <p>
-          Les échanges entre l'Application et ses serveurs sont chiffrés (HTTPS). Les mots de passe sont stockés sous forme chiffrée et ne sont jamais lisibles par l'éditeur. L'accès aux données est limité aux personnes qui en ont besoin pour faire fonctionner le service.
+          Le site est servi exclusivement en HTTPS. N'ayant ni base de données, ni compte, ni formulaire,
+          il n'expose aucune donnée personnelle.
         </p>
       </Section>
 
-      <Section titre="8. Mineurs">
-        <p>L'Application s'adresse aux conducteurs : elle n'est pas destinée aux personnes de moins de 18 ans, et aucune donnée n'est sciemment collectée auprès d'elles.</p>
-      </Section>
-
-      <Section titre="9. Modifications">
+      <Section titre="8. Modifications">
         <p>
-          Cette politique peut évoluer avec l'Application. La date de dernière mise à jour figure en haut de la page ; en cas de changement important, vous en serez informé dans l'Application.
+          Cette politique peut évoluer, en particulier lorsque l'application {app.nom} sera publiée : une
+          politique propre à l'application sera alors ajoutée. La date de dernière mise à jour figure en haut
+          de la page. Voir aussi les <Link to="/cgu">conditions d'utilisation</Link> et les{' '}
+          <Link to="/mentions-legales">mentions légales</Link>.
         </p>
       </Section>
     </LegalLayout>

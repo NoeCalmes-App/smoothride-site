@@ -1,96 +1,116 @@
 import { Link } from 'react-router-dom'
 import { LegalLayout, Section, Liste } from '../components/LegalLayout'
-import { app, contact, editeur } from '../config/site'
+import { app, contact, editeur, SITE_URL } from '../config/site'
 
+/**
+ * LES CONDITIONS D'UTILISATION DU SITE — et de lui seul.
+ *
+ * ⚠️ CE NE SONT PAS LES CONDITIONS DE L'APPLICATION, correction du 3 septembre
+ * 2026. La première version régissait l'app : compte, abonnement, signalements,
+ * usage au volant, responsabilité du conducteur. Or l'application n'est pas
+ * publiée : ces conditions n'engageaient personne et décrivaient un service qui
+ * n'existe pas. Elles seront fournies DANS l'application, à sa publication.
+ *
+ * PAS DE CGV NON PLUS, et ce n'est pas un oubli : des conditions de VENTE
+ * supposent une vente. Rien n'est vendu ici — pas de compte, pas de panier,
+ * pas de paiement. L'abonnement se souscrira dans l'app, par l'App Store ou
+ * Google Play, sous leurs conditions.
+ */
 export default function Cgu() {
+  const domaine = SITE_URL.replace(/^https?:\/\//, '')
   return (
     <LegalLayout
       titre="Conditions générales d'utilisation"
-      description={`Conditions d'utilisation de l'application ${app.nom} : accès, compte, abonnement, usage au volant, responsabilités.`}
+      description={`Conditions d'utilisation du site ${domaine} : objet, accès, propriété intellectuelle, responsabilité.`}
       miseAJour={editeur.miseAJourLegale}
       intro={
         <p>
-          En installant et en utilisant l'application {app.nom} (« l'Application »), vous acceptez les présentes conditions. Si vous ne les acceptez pas, n'utilisez pas l'Application.
+          Les présentes conditions régissent l'utilisation du site <strong>{domaine}</strong>. En le consultant,
+          vous les acceptez. Elles ne concernent que le site : l'application {app.nom} aura ses propres
+          conditions, fournies dans l'application lors de sa publication.
         </p>
       }
     >
-      <Section titre="1. L'Application">
+      <Section titre="1. Objet du site">
         <p>
-          {app.nom} est une application mobile d'aide à l'itinéraire éditée par {editeur.nomLegal}, {editeur.formeJuridique.toLowerCase()} (SIREN {editeur.siren}). Elle affiche les dos-d'âne connus autour de vous, compare plusieurs trajets en indiquant le nombre de dos-d'âne et la durée de chacun, vous guide pendant le trajet et vous permet de signaler un dos-d'âne. Elle est disponible sur iOS et Android.
+          {domaine} est un site de présentation édité par {editeur.nomLegal}, {editeur.formeJuridique.toLowerCase()}{' '}
+          (SIREN {editeur.siren}). Il présente l'application mobile {app.nom} et met à disposition les
+          informations légales de l'éditeur ainsi qu'une adresse de contact.
+        </p>
+        <p>
+          <strong>Aucune vente n'est conclue sur ce site</strong> : il ne propose ni compte, ni panier, ni
+          paiement. Il n'y a donc pas de conditions générales de vente. Le cas échéant, un abonnement se
+          souscrira dans l'application, par l'intermédiaire de l'App Store ou de Google Play, sous les
+          conditions de ces plateformes.
         </p>
       </Section>
 
-      <Section titre="2. Une aide, pas une garantie">
+      <Section titre="2. Accès">
         <p>
-          Les dos-d'âne affichés proviennent de données cartographiques ouvertes (OpenStreetMap) et de signalements d'utilisateurs, confirmés par d'autres conducteurs. Malgré ce soin, la base peut être incomplète ou dépassée : un dos-d'âne peut manquer, un autre avoir été retiré. Les durées et distances sont des estimations.
-        </p>
-        <p>
-          <strong>Vous restez seul responsable de votre conduite.</strong> L'Application ne remplace ni votre attention, ni la signalisation, ni le Code de la route. Réglez votre trajet avant de partir, et ne manipulez jamais votre téléphone en conduisant : le signalement en un appui est conçu pour cela, mais il ne dispense pas de garder les yeux sur la route.
-        </p>
-      </Section>
-
-      <Section titre="3. Compte">
-        <p>
-          L'Application peut être découverte sans compte. Un compte est demandé pour poursuivre au-delà des trajets offerts et pour souscrire l'abonnement. Vous vous engagez à fournir des informations exactes et à garder vos identifiants confidentiels. Vous pouvez supprimer votre compte à tout moment (voir <Link to="/supprimer-compte">Supprimer mon compte</Link>).
+          L'accès est libre et gratuit, sans inscription. Il nécessite une connexion internet, à votre charge.
+          L'éditeur s'efforce de garder le site accessible, sans pouvoir garantir une disponibilité
+          ininterrompue : maintenance, panne de l'hébergeur ou du réseau peuvent l'interrompre, sans que sa
+          responsabilité soit engagée.
         </p>
       </Section>
 
-      <Section titre="4. Abonnement">
+      <Section titre="3. Contenu du site">
+        <p>
+          Les informations publiées sont fournies à titre informatif. L'éditeur s'efforce de leur exactitude
+          et peut les modifier à tout moment, sans préavis.
+        </p>
+        <p>
+          <strong>L'application {app.nom} est en cours de développement.</strong> Les écrans, fonctionnalités
+          et textes présentés ici décrivent le produit tel qu'il est prévu : ils sont susceptibles d'évoluer
+          et ne constituent pas un engagement contractuel sur son contenu définitif ni sur sa date de
+          publication.
+        </p>
+      </Section>
+
+      <Section titre="4. Propriété intellectuelle">
+        <p>
+          Le nom {app.nom}, le logo, les textes, les visuels, les écrans et la structure du site sont protégés
+          et appartiennent à l'éditeur, ou sont utilisés avec l'autorisation de leurs ayants droit. La
+          consultation du site ne confère aucun droit sur ces éléments. Toute reproduction, représentation ou
+          réutilisation, totale ou partielle, sans autorisation écrite préalable, est interdite.
+        </p>
+      </Section>
+
+      <Section titre="5. Liens vers d'autres sites">
+        <p>
+          Le site peut renvoyer vers des sites tiers, notamment l'App Store et Google Play. L'éditeur n'a aucun
+          contrôle sur leur contenu ni sur leurs pratiques, et n'en répond pas. Leur consultation relève de
+          leurs propres conditions.
+        </p>
+      </Section>
+
+      <Section titre="6. Responsabilité">
+        <p>
+          Dans les limites permises par la loi, l'éditeur ne peut être tenu responsable des dommages indirects
+          résultant de la consultation du site, d'une indisponibilité, ou de l'usage fait des informations qui
+          y figurent. Rien dans les présentes ne limite les droits que la loi vous accorde en tant que
+          consommateur.
+        </p>
+      </Section>
+
+      <Section titre="7. Données personnelles">
         <Liste
           items={[
-            <>Une partie de l'Application est utilisable gratuitement ; au-delà, elle fonctionne sur <strong>abonnement</strong>, sans engagement de durée. Le périmètre gratuit, la durée et le prix de l'abonnement sont ceux affichés dans l'Application au moment de la souscription : ils font seuls foi.</>,
-            <>L'abonnement est souscrit, facturé et renouvelé automatiquement par l'<strong>App Store</strong> (Apple) ou <strong>Google Play</strong> (Google), selon votre appareil. Il se résilie à tout moment depuis les réglages de votre compte Apple ou Google ; la résiliation prend effet à la fin de la période en cours, déjà payée.</>,
-            <>Les conditions de remboursement sont celles de l'App Store ou de Google Play.</>,
+            <>Le site est statique : il ne dépose aucun cookie et ne collecte aucune donnée.</>,
+            <>Le détail figure dans la <Link to="/confidentialite">politique de confidentialité</Link>.</>,
           ]}
         />
       </Section>
 
-      <Section titre="5. Signalements">
+      <Section titre="8. Modification, droit applicable, contact">
         <p>
-          En signalant un dos-d'âne, vous déclarez qu'il existe à l'endroit indiqué. Les signalements sont vérifiés par confirmation d'autres conducteurs avant d'être publiés. Les signalements manifestement faux ou abusifs peuvent être retirés, et le compte concerné suspendu. En signalant, vous autorisez l'éditeur à intégrer l'information, anonymement, à la base des dos-d'âne partagée par tous les utilisateurs.
-        </p>
-      </Section>
-
-      <Section titre="6. Usages interdits">
-        <Liste
-          items={[
-            <>Utiliser l'Application d'une manière qui met en danger votre sécurité ou celle des autres.</>,
-            <>Tenter d'extraire, copier ou reconstituer la base des dos-d'âne, ou d'accéder aux serveurs autrement que par l'Application.</>,
-            <>Contourner l'abonnement ou les limites de la version gratuite.</>,
-          ]}
-        />
-      </Section>
-
-      <Section titre="7. Propriété intellectuelle">
-        <p>
-          L'Application, son nom, son logo, ses écrans et ses contenus appartiennent à l'éditeur. L'installation vous confère un droit d'usage personnel, non exclusif et non cessible. Les fonds de carte sont fournis par Mapbox et les données par OpenStreetMap (© les contributeurs, licence ODbL).
-        </p>
-      </Section>
-
-      <Section titre="8. Disponibilité et évolutions">
-        <p>
-          L'éditeur s'efforce de maintenir l'Application accessible, mais ne garantit pas une disponibilité ininterrompue : maintenance, panne d'un prestataire, absence de réseau. Certaines fonctions restent consultables hors ligne, d'autres non. L'Application évolue ; des fonctions peuvent être ajoutées, modifiées ou retirées.
-        </p>
-      </Section>
-
-      <Section titre="9. Responsabilité">
-        <p>
-          Dans les limites permises par la loi, l'éditeur ne peut être tenu responsable des dommages indirects liés à l'utilisation de l'Application, ni des conséquences d'une information manquante ou inexacte sur un dos-d'âne. Rien dans ces conditions ne limite les droits que la loi vous accorde en tant que consommateur.
-        </p>
-      </Section>
-
-      <Section titre="10. Données personnelles">
-        <p>
-          Le traitement de vos données est décrit dans la <Link to="/confidentialite">politique de confidentialité</Link>.
-        </p>
-      </Section>
-
-      <Section titre="11. Modifications, droit applicable, contact">
-        <p>
-          L'éditeur peut modifier ces conditions ; la version en vigueur est celle publiée sur cette page, datée en haut. Les présentes sont soumises au droit français. En cas de litige, une solution amiable sera recherchée en priorité ; vous pouvez aussi recourir gratuitement à un médiateur de la consommation. À défaut, les tribunaux français sont compétents.
+          L'éditeur peut modifier les présentes conditions ; la version applicable est celle publiée sur cette
+          page, datée en haut. Elles sont soumises au droit français. En cas de litige, une solution amiable
+          sera recherchée en priorité ; à défaut, les tribunaux français sont compétents.
         </p>
         <p>
-          Contact : <a href={`mailto:${contact.email}`}>{contact.email}</a>.
+          Contact : <a href={`mailto:${contact.email}`}>{contact.email}</a> — voir aussi les{' '}
+          <Link to="/mentions-legales">mentions légales</Link>.
         </p>
       </Section>
     </LegalLayout>
