@@ -32,7 +32,7 @@ npm run typecheck
 
 ## Pourquoi le pied de page nomme l'éditeur
 
-Le site sert aussi de site officiel de l'entreprise pour l'inscription au programme Apple Developer en organisation : Apple veut un site public, avec du vrai contenu, dont le domaine est associé à l'entité légale, et une adresse e-mail sur ce domaine. D'où la ligne du pied de page, la page Mentions légales complète et `contact@smoothride.fr`.
+Le site sert aussi de site officiel de l'entreprise pour l'inscription au programme Apple Developer en organisation : Apple veut un site public, avec du vrai contenu, dont le domaine est associé à l'entité légale, et une adresse e-mail sur ce domaine. D'où la ligne du pied de page, la page Mentions légales complète et `Gerfautmickael@smoothride.fr` — la boîte du titulaire, celle qu'Apple retrouve au nom de l'entité légale.
 
 ## Publier
 
@@ -47,5 +47,5 @@ Le site sert aussi de site officiel de l'entreprise pour l'inscription au progra
    | A     | *(vide)*     | `185.199.111.153` |
    | CNAME | `www`        | `noecalmes-app.github.io.` |
 
-3. **Boîtes mail** sur le domaine : `contact@smoothride.fr` (publique, celle du site) et une boîte au nom du titulaire pour son compte Apple Developer.
+3. **Boîte mail** sur le domaine : `Gerfautmickael@smoothride.fr` — elle sert à la fois d'adresse publique du site et de boîte du titulaire pour le compte Apple Developer. Une seule adresse, une seule à relever.
 4. Propagation DNS : 1 à 2 h. Vérifier `https://smoothride.fr` et `https://www.smoothride.fr`.

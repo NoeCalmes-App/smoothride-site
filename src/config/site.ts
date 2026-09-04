@@ -23,8 +23,14 @@ export const app = {
 } as const
 
 export const contact = {
-  /** Adresse publique : pied de page, mentions légales, support, stores. */
-  email: 'contact@smoothride.fr',
+  /**
+   * Adresse publique : pied de page, mentions légales, support, stores.
+   *
+   * C'est la boîte du titulaire, pas un `contact@` générique : c'est celle qui
+   * existe vraiment sur le domaine, et celle qu'Apple retrouve associée à
+   * l'entité légale pour le compte développeur en organisation.
+   */
+  email: 'Gerfautmickael@smoothride.fr',
   /** Délai annoncé sur la page support. */
   delaiReponse: '2 jours ouvrés',
 } as const
