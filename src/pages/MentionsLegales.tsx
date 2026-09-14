@@ -39,8 +39,9 @@ export default function MentionsLegales() {
           <strong>Directeur de la publication :</strong> {editeur.directeurPublication}.
         </p>
         <p>
-          L'application mobile {app.nom}, présentée sur ce site, est développée par le même éditeur et
-          n'est pas encore publiée sur les stores.
+          L'application mobile {app.nom}, présentée sur ce site, est éditée par la même personne.
+          Son usage est régi par les <Link to="/cgu">conditions générales d'utilisation</Link>, qui
+          valent également contrat de licence.
         </p>
       </Section>
 

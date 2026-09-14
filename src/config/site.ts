@@ -61,7 +61,7 @@ export const editeur = {
   telephone: '+33 7 74 54 40 18',
   directeurPublication: 'Mickael Gerfaut',
   /** Date de la dernière mise à jour des pages légales (affichée). */
-  miseAJourLegale: '3 septembre 2026',
+  miseAJourLegale: '14 septembre 2026',
 } as const
 
 export const hebergeur = {
