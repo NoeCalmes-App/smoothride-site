@@ -46,6 +46,23 @@ Le site sert aussi de site officiel de l'entreprise pour l'inscription au progra
    | A     | *(vide)*     | `185.199.110.153` |
    | A     | *(vide)*     | `185.199.111.153` |
    | CNAME | `www`        | `noecalmes-app.github.io.` |
+   | TXT   | *(vide)*     | `google-site-verification=aPfiKj8D1MSbcex28DsmSM-UWS1epnjxTkGrp1_VItI` |
+
+   Le TXT est la **vérification Google Search Console** du domaine (14/09/2026).
+
+   ⚠️ **IL NE PEUT PAS VIVRE DANS CE DÉPÔT.** Un enregistrement DNS se pose
+   dans la zone, chez le registrar ; GitHub Pages sert le site, il ne gère pas
+   la zone. Il est écrit ici pour qu'on le retrouve le jour où la zone est
+   refaite ou le domaine transféré — sans lui, Search Console perd la propriété
+   et les données de recherche avec.
+
+   ⚠️ **NE PAS LE SUPPRIMER APRÈS LA VALIDATION.** Google revérifie
+   périodiquement : le retirer une fois le badge obtenu fait perdre la
+   propriété quelques semaines plus tard, sans prévenir.
+
+   Il se pose sur le domaine nu (sous-domaine vide, parfois noté `@`), à côté
+   des A de GitHub Pages. Un TXT supplémentaire ne gêne ni le site ni les
+   e-mails : plusieurs TXT peuvent cohabiter sur le même nom.
 
 3. **Boîte mail** sur le domaine : `Gerfautmickael@smoothride.fr` — elle sert à la fois d'adresse publique du site et de boîte du titulaire pour le compte Apple Developer. Une seule adresse, une seule à relever.
 4. Propagation DNS : 1 à 2 h. Vérifier `https://smoothride.fr` et `https://www.smoothride.fr`.
