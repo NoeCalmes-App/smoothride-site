@@ -114,7 +114,7 @@ export default function Cgu() {
 
       <Section titre="6. L'offre gratuite">
         <p>
-          Chaque mois calendaire, <strong>cinq calculs d'itinéraire</strong> sont offerts. Le
+          Chaque mois calendaire, <strong>trois calculs d'itinéraire</strong> sont offerts. Le
           compteur revient à zéro le 1er de chaque mois. Ne sont pas décomptés : la consultation
           de la carte, un itinéraire déjà calculé et réaffiché, et les recalculs effectués
           automatiquement pendant que vous roulez.
@@ -130,7 +130,7 @@ export default function Cgu() {
         </p>
         <Liste
           items={[
-            <><strong>Prix et durée</strong> : affichés dans l'application au moment de l'achat, dans votre devise, toutes taxes comprises. Ils font foi.</>,
+            <><strong>Prix et durée</strong> : au jour de cette version, 9,99 € par mois ou 99,99 € par an en France, toutes taxes comprises. Les montants affichés dans l'application au moment de l'achat, dans votre devise et selon la fiscalité de votre pays, font seuls foi.</>,
             <><strong>Souscription</strong> : exclusivement par achat intégré, via l'App Store d'Apple ou Google Play. Nous n'encaissons aucun paiement directement et ne voyons jamais votre moyen de paiement.</>,
             <><strong>Renouvellement automatique</strong> : l'abonnement se reconduit à la fin de chaque période, au tarif alors en vigueur, sauf résiliation au moins 24 heures avant l'échéance.</>,
             <><strong>Changement de prix</strong> : toute évolution vous est notifiée par la boutique avant qu'elle ne prenne effet, et vous pouvez résilier avant l'échéance.</>,
