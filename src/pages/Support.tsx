@@ -38,7 +38,7 @@ export default function Support() {
       <Section titre="Questions fréquentes">
         <Liste
           items={[
-            <><strong>Pourquoi l'app demande ma position ?</strong> Sans elle, {app.nom} ne peut ni afficher les dos-d'âne autour de toi, ni calculer ton trajet, ni te guider. Elle n'est utilisée que pendant que l'app est ouverte, jamais en arrière-plan.</>,
+            <><strong>Pourquoi l'app demande ma position ?</strong> Sans elle, {app.nom} ne peut ni afficher les dos-d'âne autour de toi, ni calculer ton trajet, ni te guider. Pendant un trajet, elle continue quand l'écran s'éteint ou que tu passes sur une autre application, sinon le guidage s'arrêterait au premier appel. En dehors d'un trajet, {app.nom} ne la lit pas.</>,
             <><strong>J'ai refusé la position, l'app ne fait plus rien.</strong> Elle reste consultable, mais pas de trajet possible. Pour la réactiver : Réglages de ton téléphone › {app.nom} › Position.</>,
             <><strong>Combien ça coûte ?</strong> Le prix et ce qui est compris sont affichés dans l'app avant toute souscription, et le paiement passe par l'App Store ou Google Play, sans engagement.</>,
             <><strong>Comment résilier ?</strong> Depuis les réglages de ton compte Apple ou Google (Abonnements), à tout moment. L'abonnement reste actif jusqu'à la fin de la période déjà payée.</>,
