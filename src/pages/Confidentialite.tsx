@@ -95,7 +95,7 @@ export default function Confidentialite() {
         </p>
         <Liste
           items={[
-            <><strong>Votre adresse e-mail</strong> et un identifiant technique. Si vous passez par Apple ou Google, nous recevons ce que ce service nous transmet — avec « Masquer mon adresse e-mail » d'Apple, nous ne voyons qu'une adresse relais.</>,
+            <><strong>Votre adresse e-mail</strong> et un identifiant technique. Si vous passez par Apple ou Google, nous recevons ce que ce service nous transmet : votre nom et votre adresse e-mail. Avec « Masquer mon adresse e-mail » d'Apple, nous ne voyons qu'une adresse relais.</>,
             <><strong>Votre mot de passe</strong>, si vous en créez un : il est haché par Firebase Authentication et <strong>nous ne pouvons pas le lire</strong>.</>,
             <><strong>Vos adresses favorites</strong> (domicile, travail) : le nom que vous leur donnez et leurs coordonnées.</>,
             <><strong>Votre historique de trajets</strong> : destination, date, distance, durée, nombre de ralentisseurs évités. Il sert à afficher vos statistiques, à vous et à personne d'autre.</>,
