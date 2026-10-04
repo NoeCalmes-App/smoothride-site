@@ -57,7 +57,7 @@ export default function SupprimerCompte() {
           items={[
             <><strong>Un abonnement en cours n'est pas résilié.</strong> Il se résilie auprès de la boutique qui l'encaisse : réglages de votre compte Apple (« Abonnements »), ou Google Play (« Paiements et abonnements »). <strong>Résiliez-le avant de supprimer votre compte</strong>, sinon il continue d'être prélevé.</>,
             <>Les <strong>rapports de plantage</strong> anonymes déjà transmis, qui ne vous identifient pas et s'effacent d'eux-mêmes au bout de 90 jours.</>,
-            <>Les <strong>écritures comptables</strong> liées à un paiement, que la loi impose de conserver dix ans. Elles sont détenues par Apple et Google, qui encaissent.</>,
+            <>Les <strong>écritures comptables</strong> liées à un paiement, que la loi impose de conserver dix ans : la date, l'offre, le montant et l'adresse e-mail du compte. Le paiement lui-même est encaissé et détenu par Apple ou Google.</>,
             <>Les <strong>signalements de ralentisseurs</strong> que vous avez pu envoyer : ils sont versés à la base commune sans lien avec votre compte, et ne permettent pas de vous identifier.</>,
           ]}
         />

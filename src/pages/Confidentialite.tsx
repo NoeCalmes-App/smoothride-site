@@ -64,9 +64,21 @@ export default function Confidentialite() {
         <p>
           <strong>Où elle va.</strong> Pendant la navigation, votre position est traitée{' '}
           <strong>sur votre téléphone</strong> : c'est lui qui vous situe sur le tracé, calcule
-          la distance restante et déclenche les annonces. Elle ne part sur le réseau que dans un
-          seul cas : le calcul d'un itinéraire, où le point de départ et le point d'arrivée sont
-          envoyés à Mapbox (section 6). Un point de départ et une destination, pas un suivi.
+          la distance restante et déclenche les annonces. Elle ne part sur le réseau que dans
+          trois cas : le calcul d'un itinéraire, où le point de départ et le point d'arrivée
+          sont envoyés à Mapbox (section 6) ; la recherche d'adresse, où votre position sert à
+          proposer d'abord les adresses proches ; et le signalement d'un dos-d'âne, que vous
+          déclenchez vous-même (ci-dessous). Un point de départ et une destination, pas un
+          suivi.
+        </p>
+        <p>
+          <strong>Les signalements.</strong> Quand vous signalez un dos-d'âne, l'application
+          envoie la position du point, le nom de la voie et un identifiant aléatoire propre à
+          votre téléphone. Cet identifiant ne contient ni votre nom ni votre e-mail : il sert
+          uniquement à compter les confirmations, un même téléphone ne comptant qu'une fois. Le
+          lien avec votre compte est effacé dès le traitement du signalement. À trois
+          signalements de conducteurs distincts au même endroit, le dos-d'âne apparaît sur la
+          carte de tous, sans aucune information sur ceux qui l'ont signalé.
         </p>
         <p>
           <strong>Base légale.</strong> L'exécution du service que vous demandez (article 6.1.b
@@ -144,8 +156,8 @@ export default function Confidentialite() {
         <Liste
           items={[
             <><strong>Position pendant la navigation</strong> : le temps du trajet. Elle n'est écrite nulle part une fois le guidage terminé.</>,
-            <><strong>Compte, favoris, historique</strong> : tant que votre compte existe. Un compte resté inactif <strong>trois ans</strong> est supprimé, après un message d'avertissement.</>,
-            <><strong>Trajets enregistrés</strong> : les <strong>60 derniers</strong> ; les plus anciens s'effacent au fur et à mesure.</>,
+            <><strong>Signalements de dos-d'âne</strong> : conservés tant qu'ils servent la base commune, sans lien avec votre compte.</>,
+            <><strong>Compte, favoris, historique de trajets</strong> : tant que votre compte existe ; l'application affiche les 60 derniers trajets. Tout est effacé à la suppression du compte.</>,
             <><strong>Rapports de plantage</strong> : 90 jours.</>,
             <><strong>Journaux techniques</strong> : jusqu'à 12 mois.</>,
             <><strong>Facturation</strong> : conservée par Apple et Google selon leurs propres règles, et par nous pour la durée légale de conservation comptable (10 ans) lorsqu'une facture nous concerne.</>,
