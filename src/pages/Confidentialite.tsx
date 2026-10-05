@@ -103,8 +103,9 @@ export default function Confidentialite() {
           ]}
         />
         <p>
-          Sans compte, tout cela reste <strong>uniquement sur votre téléphone</strong> et disparaît
-          si vous désinstallez l'application.
+          Sans compte, votre historique de trajets et votre compteur restent{' '}
+          <strong>uniquement sur votre téléphone</strong> et disparaissent si vous désinstallez
+          l'application. Les adresses favorites, elles, demandent un compte.
         </p>
       </Section>
 
@@ -124,7 +125,7 @@ export default function Confidentialite() {
         <Liste
           items={[
             <><strong>Google Ireland Limited / Google LLC (Firebase)</strong> — comptes, base de données, stockage, rapports de plantage, notifications. Les données de compte et de trajets sont hébergées dans la région <strong>europe-west9 (Paris)</strong>.</>,
-            <><strong>Mapbox, Inc.</strong> (États-Unis) — fonds de carte, recherche d'adresses et calcul d'itinéraires. Reçoit les points de départ et d'arrivée d'un trajet, ainsi que les termes que vous tapez dans la recherche d'adresse. Ne reçoit ni votre e-mail ni votre identifiant de compte.</>,
+            <><strong>Mapbox, Inc.</strong> (États-Unis) : fonds de carte, recherche d'adresses et calcul d'itinéraires. Reçoit les points de départ et d'arrivée d'un trajet, les termes que vous tapez dans la recherche d'adresse, et votre position approximative pour classer les résultats proches. Ne reçoit ni votre e-mail ni votre identifiant de compte.</>,
             <><strong>Apple Inc.</strong> et <strong>Google LLC</strong> — l'encaissement des abonnements, chacun sur sa boutique. Ils nous transmettent l'état de l'abonnement, jamais votre moyen de paiement.</>,
             <><strong>{hebergeur.nom}</strong> ({hebergeur.service}) — l'hébergement de ce site.</>,
           ]}
@@ -158,6 +159,8 @@ export default function Confidentialite() {
             <><strong>Position pendant la navigation</strong> : le temps du trajet. Elle n'est écrite nulle part une fois le guidage terminé.</>,
             <><strong>Signalements de dos-d'âne</strong> : conservés tant qu'ils servent la base commune, sans lien avec votre compte.</>,
             <><strong>Compte, favoris, historique de trajets</strong> : tant que votre compte existe ; l'application affiche les 60 derniers trajets. Tout est effacé à la suppression du compte.</>,
+            <><strong>Recherches récentes</strong> : vos 5 dernières destinations, gardées sur votre téléphone seulement et effacées à la déconnexion.</>,
+            <><strong>Abonnement</strong> : son état et ses dates, tant que votre compte existe. Après la suppression du compte, seule la trace comptable est gardée (voir Facturation).</>,
             <><strong>Rapports de plantage</strong> : 90 jours.</>,
             <><strong>Journaux techniques</strong> : jusqu'à 12 mois.</>,
             <><strong>Facturation</strong> : conservée par Apple et Google selon leurs propres règles, et par nous pour la durée légale de conservation comptable (10 ans) lorsqu'une facture nous concerne.</>,
