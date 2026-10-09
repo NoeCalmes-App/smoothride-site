@@ -65,11 +65,16 @@ function StoreButton({ href, actif, icone, principal, store }: StoreButtonProps)
   )
 }
 
+// UN SEUL STORE EN LIGNE : son bouton passe en premier et prend la couleur
+// pleine. Le bouton plein restait sinon sur l'App Store, « Bientôt
+// disponible » et non cliquable, et le lien actif paraissait secondaire.
 export function StoreButtons({ className = '' }: { className?: string }) {
+  const googleSeul = !stores.appStore && Boolean(stores.googlePlay)
+  const apple = <StoreButton key="apple" store="App Store" href={stores.appStore} actif="Télécharger sur l'App Store" icone={<AppleIcon />} principal={!googleSeul} />
+  const google = <StoreButton key="google" store="Google Play" href={stores.googlePlay} actif="Disponible sur Google Play" icone={<GooglePlayIcon />} principal={googleSeul} />
   return (
     <div className={`flex w-full flex-col gap-3 sm:flex-row md:w-auto ${className}`}>
-      <StoreButton store="App Store" href={stores.appStore} actif="Télécharger sur l'App Store" icone={<AppleIcon />} principal />
-      <StoreButton store="Google Play" href={stores.googlePlay} actif="Disponible sur Google Play" icone={<GooglePlayIcon />} principal={false} />
+      {googleSeul ? [google, apple] : [apple, google]}
     </div>
   )
 }

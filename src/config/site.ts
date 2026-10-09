@@ -42,7 +42,8 @@ export const contact = {
  */
 export const stores = {
   appStore: '',
-  googlePlay: '',
+  // En ligne depuis le 09/10/2026 (version 1.23, France).
+  googlePlay: 'https://play.google.com/store/apps/details?id=com.smoothride.mobile&hl=fr',
 } as const
 
 /**

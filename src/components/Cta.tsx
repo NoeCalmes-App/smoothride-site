@@ -1,5 +1,13 @@
-import { app } from '../config/site'
+import { app, stores } from '../config/site'
 import { StoreButtons } from './StoreButtons'
+
+/** La phrase suit les liens de site.ts : elle ne promet jamais un store absent. */
+function disponibilite(nom: string) {
+  if (stores.appStore && stores.googlePlay) return `${nom} est disponible sur l'App Store et Google Play.`
+  if (stores.googlePlay) return `${nom} est disponible sur Google Play, et arrive bientôt sur l'App Store.`
+  if (stores.appStore) return `${nom} est disponible sur l'App Store, et arrive bientôt sur Google Play.`
+  return `${nom} arrive sur l'App Store et Google Play.`
+}
 
 export function Cta() {
   return (
@@ -9,7 +17,7 @@ export function Cta() {
           Prêt à rouler plus doux ?
         </h2>
         <p className="mx-auto mt-4 max-w-xl text-[17px] leading-relaxed text-ink-2 md:text-[18px]">
-          {app.nom} arrive sur l'App Store et Google Play.
+          {disponibilite(app.nom)}
         </p>
         <div className="mt-8 flex justify-center">
           <StoreButtons />
