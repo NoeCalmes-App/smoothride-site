@@ -71,7 +71,7 @@ function StoreButton({ href, actif, icone, principal, store }: StoreButtonProps)
 export function StoreButtons({ className = '' }: { className?: string }) {
   const googleSeul = !stores.appStore && Boolean(stores.googlePlay)
   const apple = <StoreButton key="apple" store="App Store" href={stores.appStore} actif="Télécharger sur l'App Store" icone={<AppleIcon />} principal={!googleSeul} />
-  const google = <StoreButton key="google" store="Google Play" href={stores.googlePlay} actif="Disponible sur Google Play" icone={<GooglePlayIcon />} principal={googleSeul} />
+  const google = <StoreButton key="google" store="Google Play" href={stores.googlePlay} actif="Télécharger sur Google Play" icone={<GooglePlayIcon />} principal={googleSeul} />
   return (
     <div className={`flex w-full flex-col gap-3 sm:flex-row md:w-auto ${className}`}>
       {googleSeul ? [google, apple] : [apple, google]}
