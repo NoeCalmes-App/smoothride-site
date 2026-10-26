@@ -37,7 +37,7 @@ export default function Confidentialite() {
       <Section titre="1. Responsable du traitement">
         <p>
           <strong>{editeur.nomLegal}</strong>, {editeur.formeJuridique.toLowerCase()} (nom commercial{' '}
-          {editeur.nomCommercial}), SIREN {editeur.siren}, {editeur.adresse}. Pour toute question
+          {editeur.nomCommercial}), SIRET {editeur.siret}. Pour toute question
           sur vos données : <a href={`mailto:${contact.email}`}>{contact.email}</a>.
         </p>
       </Section>

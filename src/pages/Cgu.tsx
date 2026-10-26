@@ -36,9 +36,9 @@ export default function Cgu() {
       <Section titre="1. L'éditeur">
         <p>
           <strong>{editeur.nomLegal}</strong>, {editeur.formeJuridique.toLowerCase()} (nom commercial{' '}
-          {editeur.nomCommercial}), SIREN {editeur.siren}, {editeur.adresse}. Contact :{' '}
-          <a href={`mailto:${contact.email}`}>{contact.email}</a>. Les coordonnées complètes
-          figurent dans les <Link to="/mentions-legales">mentions légales</Link>.
+          {editeur.nomCommercial}), SIRET {editeur.siret}. Contact :{' '}
+          <a href={`mailto:${contact.email}`}>{contact.email}</a>. Voir aussi les{' '}
+          <Link to="/mentions-legales">mentions légales</Link>.
         </p>
       </Section>
 

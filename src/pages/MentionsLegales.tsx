@@ -29,9 +29,7 @@ export default function MentionsLegales() {
         <Liste
           items={[
             <><strong>{editeur.nomLegal}</strong>, {editeur.formeJuridique.toLowerCase()}, exerçant sous le nom commercial {editeur.nomCommercial}</>,
-            <>SIREN : {editeur.siren} — SIRET : {editeur.siret}</>,
-            <>Adresse : {editeur.adresse}</>,
-            <>Téléphone : <a href={`tel:${editeur.telephone.replace(/\s/g, '')}`}>{editeur.telephone}</a></>,
+            <>SIRET : {editeur.siret}</>,
             <>E-mail : <a href={`mailto:${contact.email}`}>{contact.email}</a></>,
           ]}
         />

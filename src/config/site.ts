@@ -57,13 +57,13 @@ export const editeur = {
   nomLegal: 'Mickael Gerfaut',
   formeJuridique: 'Entrepreneur individuel',
   nomCommercial: 'SmoothRide',
-  siren: '843 947 771',
+  // NI ADRESSE NI TÉLÉPHONE PERSONNELS SUR LE SITE (demande de Noé du
+  // 26/10/2026) : le SIRET identifie l'entreprise, l'e-mail de `contact`
+  // suffit pour écrire.
   siret: '843 947 771 00021',
-  adresse: '21 rue Brenu, 92230 Gennevilliers, France',
-  telephone: '+33 7 74 54 40 18',
   directeurPublication: 'Mickael Gerfaut',
   /** Date de la dernière mise à jour des pages légales (affichée). */
-  miseAJourLegale: '6 octobre 2026',
+  miseAJourLegale: '26 octobre 2026',
 } as const
 
 export const hebergeur = {

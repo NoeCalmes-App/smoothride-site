@@ -32,7 +32,7 @@ npm run typecheck
 
 ## Pourquoi le pied de page nomme l'éditeur
 
-Le site sert aussi de site officiel de l'entreprise pour l'inscription au programme Apple Developer en organisation : Apple veut un site public, avec du vrai contenu, dont le domaine est associé à l'entité légale, et une adresse e-mail sur ce domaine. D'où la ligne du pied de page, la page Mentions légales complète et `Gerfautmickael@smoothride.fr` — la boîte du titulaire, celle qu'Apple retrouve au nom de l'entité légale.
+Le site sert aussi de site officiel de l'entreprise pour l'inscription au programme Apple Developer en organisation : Apple veut un site public, avec du vrai contenu, dont le domaine est associé à l'entité légale, et une adresse e-mail sur ce domaine. D'où la ligne du pied de page, la page Mentions légales (nom, SIRET, e-mail ; ni adresse ni téléphone personnels depuis le 26/10/2026, demande de Noé) et `Gerfautmickael@smoothride.fr` — la boîte du titulaire, celle qu'Apple retrouve au nom de l'entité légale.
 
 ## Publier
 

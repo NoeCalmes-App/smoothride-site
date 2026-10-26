@@ -40,7 +40,7 @@ export function Footer() {
 
         <div className="mt-10 border-t border-line pt-6 text-[13px] leading-relaxed text-ink-2">
           <p>
-            {app.nom} est une application éditée par {editeur.nomLegal}, {editeur.formeJuridique.toLowerCase()} — SIREN {editeur.siren} —{' '}
+            {app.nom} est une application éditée par {editeur.nomLegal}, {editeur.formeJuridique.toLowerCase()} · SIRET {editeur.siret} ·{' '}
             <a href={`mailto:${contact.email}`} className="font-semibold text-ink underline-offset-2 hover:underline">
               {contact.email}
             </a>
