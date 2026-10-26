@@ -41,7 +41,8 @@ export const contact = {
  * l'icône du store. Coller l'adresse ici suffit.
  */
 export const stores = {
-  appStore: '',
+  // En ligne depuis le 25/10/2026 (version 1.0, France).
+  appStore: 'https://apps.apple.com/fr/app/smoothride/id6812007623',
   // En ligne depuis le 09/10/2026 (version 1.23, France).
   googlePlay: 'https://play.google.com/store/apps/details?id=com.smoothride.mobile&hl=fr',
 } as const
