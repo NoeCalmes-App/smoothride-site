@@ -66,6 +66,12 @@ export const editeur = {
   miseAJourLegale: '26 octobre 2026',
 } as const
 
+/** Qui a fait l'app et le site : une ligne discrète, en gris, vers son site. */
+export const realisation = {
+  texte: 'Application et site web développés par Noé Calmes',
+  site: 'https://noecalmes.fr',
+} as const
+
 export const hebergeur = {
   nom: 'GitHub, Inc.',
   adresse: '88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, États-Unis',

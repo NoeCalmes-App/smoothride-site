@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom'
-import { app, contact, editeur } from '../config/site'
+import { editeur } from '../config/site'
+import { Credit } from './Credit'
 import { Logotype } from './Mark'
 
 const liens = [
@@ -11,10 +12,10 @@ const liens = [
 ]
 
 /**
- * Le pied de page nomme l'ÉDITEUR LÉGAL. Ce n'est pas de la décoration : c'est
- * ce qui associe ce domaine à l'entité qui publie l'app — ce qu'Apple vérifie
- * pour le compte développeur, et ce que la loi française demande à tout site
- * professionnel. Le détail complet est sur la page Mentions légales.
+ * Le pied de page : les liens, le © de l'éditeur légal et la ligne de
+ * réalisation. Plus de phrase d'éditeur avec SIRET et e-mail (demande de Noé
+ * du 26/10/2026) : ils sont sur la page Mentions légales, où la loi les
+ * demande et où Apple les trouve.
  */
 export function Footer() {
   const annee = new Date().getFullYear()
@@ -38,16 +39,9 @@ export function Footer() {
           </nav>
         </div>
 
-        <div className="mt-10 border-t border-line pt-6 text-[13px] leading-relaxed text-ink-2">
-          <p>
-            {app.nom} est une application éditée par {editeur.nomLegal}, {editeur.formeJuridique.toLowerCase()} · SIRET {editeur.siret} ·{' '}
-            <a href={`mailto:${contact.email}`} className="font-semibold text-ink underline-offset-2 hover:underline">
-              {contact.email}
-            </a>
-          </p>
-          <p className="mt-1.5 text-ink-3">
-            © {annee} {editeur.nomLegal}. Tous droits réservés.
-          </p>
+        <div className="mt-10 border-t border-line pt-6 text-[13px] leading-relaxed">
+          <p className="text-ink-3">© {annee} {editeur.nomLegal}. Tous droits réservés.</p>
+          <Credit className="mt-1.5" />
         </div>
       </div>
     </footer>

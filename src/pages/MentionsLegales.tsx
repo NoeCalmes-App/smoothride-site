@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom'
+import { Credit } from '../components/Credit'
 import { LegalLayout, Section, Liste } from '../components/LegalLayout'
 import { app, contact, editeur, hebergeur, SITE_URL } from '../config/site'
 
@@ -80,6 +81,8 @@ export default function MentionsLegales() {
           <Link to="/cgu">conditions d'utilisation</Link>.
         </p>
       </Section>
+
+      <Credit className="text-[14px]" />
     </LegalLayout>
   )
 }
