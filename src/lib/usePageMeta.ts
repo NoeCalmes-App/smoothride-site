@@ -10,7 +10,7 @@ import { app } from '../config/site'
  */
 export function usePageMeta(titre: string | null, description?: string) {
   useEffect(() => {
-    document.title = titre ? `${titre} — ${app.nom}` : `${app.nom} — ${app.accroche.join(' ')}`
+    document.title = titre ? `${titre} · ${app.nom}` : `${app.nom} · ${app.accroche.join(' ')}`
     const meta = document.querySelector<HTMLMetaElement>('meta[name="description"]')
     if (meta) meta.content = description ?? app.metaDescription
     window.scrollTo({ top: 0 })

@@ -14,7 +14,7 @@ import report from '../assets/screens/report.webp'
  * porte toute la valeur », « Envoyé sans quitter la route ») : le visiteur
  * lisait une promesse et devait deviner tout seul le chiffre qui la prouve,
  * juste au-dessus. Maintenant chacune reprend ce que la capture montre — deux
- * minutes contre six secousses, une question à un appui — et se vérifie en
+ * minutes contre six dos-d'âne, une question à un appui — et se vérifie en
  * regardant l'image. Si la capture change, la légende change avec elle.
  *
  * Chaque <li> est un CONTENEUR (container-type) : le téléphone prend sa
@@ -23,7 +23,7 @@ import report from '../assets/screens/report.webp'
  * cartes s'écrasaient à zéro et se superposaient.
  */
 const ecrans = [
-  { src: compare, titre: 'Comparaison', sous: 'Deux minutes de plus, six secousses en moins' },
+  { src: compare, titre: 'Comparaison', sous: "Deux minutes de plus, six dos-d'âne en moins" },
   { src: homeMap, titre: 'Carte', sous: 'Tout ce qui t’attend, avant de partir' },
   { src: report, titre: 'Signalement', sous: 'Une question, un appui, tu restes sur la route' },
 ]

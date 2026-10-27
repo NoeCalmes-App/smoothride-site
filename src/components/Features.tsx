@@ -30,7 +30,7 @@ const fonctionnalites = [
   {
     icone: RefreshCw,
     titre: 'Un recalcul chiffré',
-    texte: "Si un dos-d'âne surgit sur ton itinéraire, SmoothRide te propose un détour, avec les minutes en plus et les secousses en moins. À toi de décider.",
+    texte: "Si un dos-d'âne surgit sur ton itinéraire, SmoothRide te propose un détour, avec les minutes en plus et les dos-d'âne en moins. À toi de décider.",
   },
   {
     icone: History,
@@ -46,7 +46,7 @@ export function Features() {
         <div className="max-w-2xl">
           <p className="cale text-[13px] font-bold uppercase tracking-[0.12em] text-jade">Fonctionnalités</p>
           <h2 className="mt-3 text-[2rem] font-extrabold leading-[1.1] tracking-[-0.03em] text-balance md:text-[2.6rem]">
-            Moins de secousses, pas plus de détours que tu ne veux.
+            Moins de dos-d'âne, pas plus de détours que tu ne veux.
           </h2>
         </div>
 

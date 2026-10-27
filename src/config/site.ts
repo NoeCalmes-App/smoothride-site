@@ -12,8 +12,10 @@ export const SITE_URL: string = import.meta.env.VITE_SITE_URL ?? 'https://smooth
 
 export const app = {
   nom: 'SmoothRide',
-  /** La promesse, telle qu'elle est écrite sur l'écran d'accueil de l'app. */
-  accroche: ['Le même trajet,', 'sans les secousses.'],
+  /** La promesse, celle des fiches App Store et Google Play (choix de Noé
+   *  du 27/10/2026 : « Votre trajet sans les dos-d'âne », plus parlant que
+   *  « Le même trajet, sans les secousses »). */
+  accroche: ['Votre trajet,', "sans les dos-d'âne."],
   description:
     "SmoothRide compare deux routes, compte les dos-d'âne sur chacune et te dit ce que le confort coûte en minutes. À toi de choisir.",
   /** Une phrase pour les moteurs de recherche et les réseaux (< 160 caractères). */
