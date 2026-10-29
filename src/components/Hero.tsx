@@ -1,3 +1,4 @@
+import { Car } from 'lucide-react'
 import { app } from '../config/site'
 import { StoreButtons } from './StoreButtons'
 import { PhoneFrame } from './PhoneFrame'
@@ -23,6 +24,10 @@ export function Hero() {
           </h1>
           <p className="mt-5 max-w-xl text-[17px] leading-relaxed text-ink-2 md:text-[19px]">{app.description}</p>
           <StoreButtons className="mt-8" />
+          <p className="mt-5 inline-flex items-center gap-2 text-[15px] font-semibold leading-none text-ink-2">
+            <Car size={18} strokeWidth={2.2} className="shrink-0 text-jade" aria-hidden="true" />
+            <span className="cale">Disponible sur {app.voiture}</span>
+          </p>
         </div>
 
         <div className="relative mx-auto">

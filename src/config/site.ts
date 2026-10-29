@@ -20,8 +20,11 @@ export const app = {
     "SmoothRide compare deux routes, compte les dos-d'âne sur chacune et te dit ce que le confort coûte en minutes. À toi de choisir.",
   /** Une phrase pour les moteurs de recherche et les réseaux (< 160 caractères). */
   metaDescription:
-    "SmoothRide, l'app qui compare deux trajets, compte les dos-d'âne sur chacun et te dit ce que le confort coûte en minutes.",
+    "SmoothRide, l'app qui compare deux trajets, compte les dos-d'âne sur chacun et te dit ce que le confort coûte en minutes. Aussi sur CarPlay et Android Auto.",
   plateformes: 'iOS et Android',
+  /** L'écran de la voiture : CarPlay en ligne avec la version 1.1 (28/10/2026),
+   *  Android Auto avec la 1.1.1. Affiché dans le hero et les fonctionnalités. */
+  voiture: 'CarPlay et Android Auto',
 } as const
 
 export const contact = {

@@ -1,4 +1,5 @@
-import { History, Map, Navigation, RefreshCw, Route, TriangleAlert } from 'lucide-react'
+import { Car, History, Map, Navigation, RefreshCw, Route, TriangleAlert } from 'lucide-react'
+import { app } from '../config/site'
 
 /**
  * Ce que l'app fait — et rien de plus. Chaque carte correspond à un écran de
@@ -39,6 +40,13 @@ const fonctionnalites = [
   },
 ]
 
+/** La voiture : une carte sur toute la largeur, après les six autres (une
+ *  septième carte laisserait une rangée bancale dans la grille de trois). */
+const voiture = {
+  titre: "Sur l'écran de ta voiture",
+  texte: `SmoothRide s'affiche avec ${app.voiture} : la carte, les deux trajets à comparer, le guidage et les alertes de dos-d'âne, sur l'écran de bord.`,
+}
+
 export function Features() {
   return (
     <section className="bg-bg" id="fonctionnalites">
@@ -60,6 +68,15 @@ export function Features() {
               <p className="mt-2 text-[15px] leading-relaxed text-ink-2">{texte}</p>
             </li>
           ))}
+          <li className="rounded-card border border-jade/40 bg-surface p-6 sm:col-span-2 sm:flex sm:items-center sm:gap-5 lg:col-span-3">
+            <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-tile bg-jade text-jade-ink" aria-hidden="true">
+              <Car size={22} strokeWidth={2.2} />
+            </span>
+            <div className="mt-5 sm:mt-0">
+              <h3 className="text-[18px] font-extrabold leading-tight tracking-[-0.02em]">{voiture.titre}</h3>
+              <p className="mt-2 text-[15px] leading-relaxed text-ink-2">{voiture.texte}</p>
+            </div>
+          </li>
         </ul>
       </div>
     </section>
