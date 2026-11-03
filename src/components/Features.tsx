@@ -44,7 +44,7 @@ const fonctionnalites = [
  *  septième carte laisserait une rangée bancale dans la grille de trois). */
 const voiture = {
   titre: "Sur l'écran de ta voiture",
-  texte: `SmoothRide s'affiche avec ${app.voiture} : la carte, les deux trajets à comparer, le guidage et les alertes de dos-d'âne, sur l'écran de bord.`,
+  texte: `SmoothRide s'affiche avec ${app.voiture} : la carte, les deux trajets à comparer, le guidage et les alertes de dos-d'âne, sur l'écran de bord. Bientôt aussi sur ${app.voitureBientot}.`,
 }
 
 export function Features() {

@@ -26,7 +26,7 @@ export function Hero() {
           <StoreButtons className="mt-8" />
           <p className="mt-5 inline-flex items-center gap-2 text-[15px] font-semibold leading-none text-ink-2">
             <Car size={18} strokeWidth={2.2} className="shrink-0 text-jade" aria-hidden="true" />
-            <span className="cale">Disponible sur {app.voiture}</span>
+            <span className="cale">Disponible sur {app.voiture}, bientôt sur {app.voitureBientot}</span>
           </p>
         </div>
 
