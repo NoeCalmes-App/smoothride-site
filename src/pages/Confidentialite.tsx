@@ -22,7 +22,7 @@ export default function Confidentialite() {
   return (
     <LegalLayout
       titre="Politique de confidentialité"
-      description={`Ce que ${app.nom} fait de vos données : la position sert à calculer et guider vos trajets, jamais à vous suivre ; aucun traceur publicitaire, aucune revente.`}
+      description={`Ce que ${app.nom} fait de vos données : la position sert à calculer et guider vos trajets, jamais à vous suivre ; aucune revente, et rien pour Meta sans votre accord.`}
       miseAJour={editeur.miseAJourLegale}
       intro={
         <p>
@@ -30,7 +30,9 @@ export default function Confidentialite() {
           <strong>{app.nom}</strong> ({app.plateformes}). Elle dit ce qui est collecté, pourquoi,
           qui le reçoit et combien de temps. En une phrase : {app.nom} a besoin de votre position
           pour calculer un trajet et vous guider, ne la conserve pas pour vous suivre,
-          n'affiche aucune publicité et ne vend rien à personne.
+          n'affiche aucune publicité et ne vend rien à personne. Si vous l'acceptez, elle aide aussi
+          à mesurer nos propres publicités sur Facebook et Instagram (section 5), sans jamais
+          transmettre votre position ni vos trajets.
         </p>
       }
     >
@@ -45,8 +47,8 @@ export default function Confidentialite() {
       <Section titre="2. Ce que l'application ne fait pas">
         <Liste
           items={[
-            <>Elle n'affiche <strong>aucune publicité</strong> et n'intègre aucun traceur publicitaire.</>,
-            <>Elle ne <strong>vend, ne loue et n'échange</strong> aucune donnée, à personne, à aucune condition.</>,
+            <>Elle n'affiche <strong>aucune publicité</strong>, et <strong>rien ne part chez Meta sans votre accord</strong> (section 5).</>,
+            <>Elle ne <strong>vend et ne loue</strong> aucune donnée, à personne, à aucune condition.</>,
             <>Elle ne construit <strong>aucun profil commercial</strong> et ne prend aucune décision automatisée produisant des effets juridiques.</>,
             <>Elle n'enregistre <strong>jamais l'historique continu de vos déplacements</strong> : votre position vit le temps du trajet, pas au-delà.</>,
             <>Elle ne voit <strong>jamais vos coordonnées bancaires</strong> : les paiements sont encaissés par Apple et Google, qui ne nous les transmettent pas.</>,
@@ -128,6 +130,7 @@ export default function Confidentialite() {
             <><strong>Rapports de plantage</strong> (Firebase Crashlytics) : type d'appareil, version du système, version de l'application, pile d'appels au moment du plantage et un identifiant aléatoire propre à l'installation. Ils servent à corriger les pannes. Base légale : notre intérêt légitime à fournir une application qui fonctionne.</>,
             <><strong>Jeton de notification</strong> (Firebase Cloud Messaging) : un identifiant technique que le service de notifications de Google attribue à l'application dès son lancement, que vous ayez accepté les notifications ou non. Il sert à acheminer une notification ; nous ne le conservons dans aucune de nos bases de données, et il ne dit rien de vous.</>,
             <><strong>Attestation d'intégrité</strong> (Firebase App Check) : une preuve que les requêtes viennent bien de l'application officielle, et non d'un script. Elle empêche l'usage frauduleux de nos clés.</>,
+            <><strong>Mesure des publicités</strong> (SDK Meta), <strong>seulement si vous l'acceptez</strong> : nous faisons connaître {app.nom} par des publicités sur Facebook et Instagram, et cette mesure nous dit lesquelles fonctionnent. Sur iPhone, votre accord est donné dans la fenêtre d'Apple ; sur Android, dans celle de l'application. Si vous acceptez, Meta reçoit votre identifiant publicitaire, votre adresse IP, des informations sur l'appareil (modèle, système, langue) et quatre événements : l'ouverture de l'application, qui compte l'installation, la création d'un compte, le premier trajet, et la souscription d'un abonnement avec son prix, sa devise et son numéro de transaction. Meta ne reçoit <strong>ni votre position, ni vos trajets, ni votre adresse e-mail</strong>. Si vous refusez, rien de tout cela ne part chez Meta. Sur iPhone, Apple nous donne alors seulement des chiffres globaux sur les installations venues d'une publicité, sans aucun identifiant et sans rien qui permette de vous reconnaître. Base légale : votre consentement, que vous pouvez retirer à tout moment (section 9).</>,
             <><strong>Journaux des serveurs</strong> : adresse IP, date et ressource demandée, conservés par nos prestataires pour la sécurité et le diagnostic.</>,
           ]}
         />
@@ -140,6 +143,7 @@ export default function Confidentialite() {
             <><strong>Google Ireland Limited / Google LLC (Firebase, Google Maps)</strong> : comptes (Firebase Authentication), base de données (Cloud Firestore), fonctions serveur (Cloud Functions), fichiers de dos-d'âne (Firebase Hosting), rapports de plantage (Crashlytics), notifications (Cloud Messaging) et contrôle d'intégrité (App Check). La base de données et les fonctions serveur sont hébergées dans la région <strong>europe-west9 (Paris)</strong>, sauf la fonction qui efface le rôle d'un compte supprimé, à Bruxelles (europe-west1), dans l'Union européenne ; l'authentification, les rapports de plantage, les notifications et les fichiers de dos-d'âne passent par des services mondiaux de Google. Google Maps (Street View) reçoit enfin la position d'un dos-d'âne signalé quand l'éditeur le vérifie depuis son outil d'administration, sans aucune information sur la personne qui l'a signalé.</>,
             <><strong>Mapbox, Inc.</strong> (États-Unis) : fonds de carte, recherche d'adresses et calcul d'itinéraires. Reçoit les points de départ et d'arrivée d'un trajet, les termes que vous tapez dans la recherche d'adresse, et votre position précise (coordonnées GPS) dans trois cas : à chaque recherche d'adresse, pour classer les résultats proches ; quand le départ ou l'arrivée d'un trajet est « Ma position » ; et lors d'un recalcul en cours de route, avec votre sens de marche. La collecte statistique (télémétrie) du SDK Mapbox est désactivée dans l'application. Mapbox voit aussi, comme tout serveur, votre adresse IP et la zone de carte affichée. Ne reçoit ni votre e-mail ni votre identifiant de compte.</>,
             <><strong>Apple Inc.</strong> et <strong>Google LLC</strong> : l'encaissement des abonnements, chacun sur sa boutique ; la connexion avec votre compte Apple ou Google, si vous la choisissez ; et l'attestation d'intégrité de l'application (App Attest et DeviceCheck chez Apple, Play Integrity chez Google). Ils nous transmettent l'état de l'abonnement, jamais votre moyen de paiement.</>,
+            <><strong>Meta Platforms Ireland Limited</strong>, seulement si vous l'acceptez : la mesure des publicités décrite à la section 5. Meta traite ces données selon sa propre <a href="https://www.facebook.com/privacy/policy" target="_blank" rel="noreferrer">politique de confidentialité</a>. Une agence qui gère nos publicités voit les résultats de cette mesure dans les outils de Meta, sous forme de chiffres.</>,
             <><strong>{hebergeur.nom}</strong> ({hebergeur.service}) : l'hébergement de ce site.</>,
           ]}
         />
@@ -163,7 +167,8 @@ export default function Confidentialite() {
           services mondiaux de <strong>Google</strong> (authentification, rapports de plantage,
           notifications, contrôle d'intégrité, fichiers de dos-d'âne, Street View pour l'éditeur) et
           ses opérations de support, qui peuvent avoir lieu depuis d'autres pays, notamment les
-          États-Unis ; et <strong>GitHub</strong>, société américaine, qui héberge ce site. Ces transferts sont
+          États-Unis ; <strong>Meta</strong>, si vous avez accepté la mesure des publicités, dont les
+          données peuvent être traitées aux États-Unis ; et <strong>GitHub</strong>, société américaine, qui héberge ce site. Ces transferts sont
           encadrés par les <strong>clauses contractuelles types</strong> de la Commission
           européenne, complétées par les garanties techniques de ces prestataires (chiffrement en
           transit et au repos).
@@ -179,6 +184,7 @@ export default function Confidentialite() {
             <><strong>Recherches récentes</strong> : vos 5 dernières destinations, gardées sur votre téléphone (sauvegarde Android mise à part, voir section 4) et effacées à la déconnexion.</>,
             <><strong>Abonnement</strong> : son état et ses dates, tant que votre compte existe. Après la suppression du compte, seule la trace comptable est gardée (voir Facturation).</>,
             <><strong>Rapports de plantage</strong> : 90 jours.</>,
+            <><strong>Mesure des publicités</strong> : ces données sont conservées par Meta, selon ses propres règles. Nous n'en gardons aucune copie sur nos serveurs. Votre choix reste enregistré sur votre téléphone.</>,
             <><strong>Journaux techniques</strong> : jusqu'à 12 mois.</>,
             <><strong>Facturation</strong> : conservée par Apple et Google selon leurs propres règles, et, de notre côté, par le journal des paiements (identifiant et adresse e-mail du compte, boutique, offre, prix, date, numéro de transaction), gardé pour la durée légale de conservation comptable (10 ans), y compris après la suppression du compte.</>,
           ]}
@@ -188,13 +194,14 @@ export default function Confidentialite() {
       <Section titre="9. Vos droits">
         <p>
           Vous disposez des droits d'accès, de rectification, d'effacement, de limitation,
-          d'opposition et de portabilité prévus par le RGPD. Deux d'entre eux s'exercent
+          d'opposition et de portabilité prévus par le RGPD. Trois d'entre eux s'exercent
           directement, sans nous écrire :
         </p>
         <Liste
           items={[
             <><strong>Effacement</strong> : onglet « Compte » → « Supprimer mon compte », dans l'application. Le compte, les favoris, l'historique, le compteur de trajets et l'état d'abonnement sont supprimés. Restent, comme indiqué à la section 8, le journal des paiements, qui garde votre adresse e-mail, et vos signalements de dos-d'âne, détachés de votre compte. Voir aussi <Link to="/supprimer-compte">la marche à suivre détaillée</Link>.</>,
             <><strong>Opposition à la géolocalisation</strong> : retirez l'autorisation dans les réglages de votre téléphone, à tout moment.</>,
+            <><strong>Retrait de votre accord à la mesure des publicités</strong> : onglet « Compte » → « Mesure des publicités », à tout moment. Sur iPhone, ce lien ouvre les réglages de l'application, où se trouve l'autorisation de suivi. Plus rien ne part chez Meta à partir de ce moment.</>,
           ]}
         />
         <p>

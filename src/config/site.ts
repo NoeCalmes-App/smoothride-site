@@ -70,7 +70,7 @@ export const editeur = {
   siret: '843 947 771 00021',
   directeurPublication: 'Mickael Gerfaut',
   /** Date de la dernière mise à jour des pages légales (affichée). */
-  miseAJourLegale: '26 octobre 2026',
+  miseAJourLegale: '6 novembre 2026',
 } as const
 
 /** Qui a fait l'app et le site : une ligne discrète, en gris, vers son site. */
