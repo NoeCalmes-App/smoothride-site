@@ -14,7 +14,7 @@ export const app = {
   nom: 'SmoothRide',
   /** La promesse, celle des fiches App Store et Google Play (choix de Noé
    *  du 27/10/2026 : « Votre trajet sans les dos-d'âne », plus parlant que
-   *  « Le même trajet, sans les secousses »). */
+   *  l'ancienne accroche ; le client a banni ce mot le 23/11/2026). */
   accroche: ['Votre trajet,', "sans les dos-d'âne."],
   description:
     "SmoothRide compare deux routes, compte les dos-d'âne sur chacune et te dit ce que le confort coûte en minutes. À toi de choisir.",
